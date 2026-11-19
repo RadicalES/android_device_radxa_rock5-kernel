@@ -2021,7 +2021,7 @@ CONFIG_FW_LOADER=y
 CONFIG_FW_LOADER_PAGED_BUF=y
 CONFIG_FW_LOADER_SYSFS=y
 CONFIG_EXTRA_FIRMWARE="arm/mali/arch10.8/mali_csffw.bin rtl_nic/rtl8125b-2.fw rtl_bt/rtl8852bu_fw.bin rtl_bt/rtl8852btu_fw.bin rtw89/rtw8852b_fw-1.bin regulatory.db regulatory.db.p7s"
-CONFIG_EXTRA_FIRMWARE_DIR="/mnt/build/android-15-rock5/out/rock5-prebuilts/firmware"
+CONFIG_EXTRA_FIRMWARE_DIR="/mnt/build/rock5/android_device_radxa_rock5/out/firmware"
 CONFIG_FW_LOADER_USER_HELPER=y
 # CONFIG_FW_LOADER_USER_HELPER_FALLBACK is not set
 # CONFIG_FW_LOADER_COMPRESS is not set
@@ -5563,7 +5563,7 @@ CONFIG_CEC_MESON_G12A_AO=m
 # CONFIG_USB_RAINSHADOW_CEC is not set
 # end of CEC support
 
-CONFIG_MEDIA_SUPPORT=m
+CONFIG_MEDIA_SUPPORT=y
 CONFIG_MEDIA_SUPPORT_FILTER=y
 CONFIG_MEDIA_SUBDRV_AUTOSELECT=y
 
@@ -5571,17 +5571,16 @@ CONFIG_MEDIA_SUBDRV_AUTOSELECT=y
 # Media device types
 #
 CONFIG_MEDIA_CAMERA_SUPPORT=y
-CONFIG_MEDIA_ANALOG_TV_SUPPORT=y
-CONFIG_MEDIA_DIGITAL_TV_SUPPORT=y
+# CONFIG_MEDIA_ANALOG_TV_SUPPORT is not set
+# CONFIG_MEDIA_DIGITAL_TV_SUPPORT is not set
 # CONFIG_MEDIA_RADIO_SUPPORT is not set
-CONFIG_MEDIA_SDR_SUPPORT=y
+# CONFIG_MEDIA_SDR_SUPPORT is not set
 CONFIG_MEDIA_PLATFORM_SUPPORT=y
 # CONFIG_MEDIA_TEST_SUPPORT is not set
 # end of Media device types
 
-CONFIG_VIDEO_DEV=m
+CONFIG_VIDEO_DEV=y
 CONFIG_MEDIA_CONTROLLER=y
-CONFIG_DVB_CORE=m
 
 #
 # Video4Linux options
@@ -5594,8 +5593,8 @@ CONFIG_V4L2_JPEG_HELPER=m
 CONFIG_V4L2_H264=m
 CONFIG_V4L2_VP9=m
 CONFIG_V4L2_MEM2MEM_DEV=m
-CONFIG_V4L2_FWNODE=m
-CONFIG_V4L2_ASYNC=m
+CONFIG_V4L2_FWNODE=y
+CONFIG_V4L2_ASYNC=y
 CONFIG_V4L2_CCI=m
 CONFIG_V4L2_CCI_I2C=m
 # end of Video4Linux options
@@ -5603,19 +5602,7 @@ CONFIG_V4L2_CCI_I2C=m
 #
 # Media controller options
 #
-# CONFIG_MEDIA_CONTROLLER_DVB is not set
 # end of Media controller options
-
-#
-# Digital TV options
-#
-# CONFIG_DVB_MMAP is not set
-# CONFIG_DVB_NET is not set
-CONFIG_DVB_MAX_ADAPTERS=16
-CONFIG_DVB_DYNAMIC_MINORS=y
-# CONFIG_DVB_DEMUX_SECTION_LOSS_LOG is not set
-# CONFIG_DVB_ULE_DEBUG is not set
-# end of Digital TV options
 
 #
 # Media drivers
@@ -5637,50 +5624,16 @@ CONFIG_MEDIA_USB_SUPPORT=y
 # CONFIG_USB_PWC is not set
 # CONFIG_USB_S2255 is not set
 # CONFIG_VIDEO_USBTV is not set
-CONFIG_USB_VIDEO_CLASS=m
+CONFIG_USB_VIDEO_CLASS=y
 CONFIG_USB_VIDEO_CLASS_INPUT_EVDEV=y
-
-#
-# Analog TV USB devices
-#
-# CONFIG_VIDEO_GO7007 is not set
-# CONFIG_VIDEO_HDPVR is not set
-# CONFIG_VIDEO_PVRUSB2 is not set
-# CONFIG_VIDEO_STK1160 is not set
-
-#
-# Analog/digital TV USB devices
-#
-# CONFIG_VIDEO_AU0828 is not set
-# CONFIG_VIDEO_CX231XX is not set
-
-#
-# Digital TV USB devices
-#
-# CONFIG_DVB_AS102 is not set
-# CONFIG_DVB_B2C2_FLEXCOP_USB is not set
-# CONFIG_DVB_USB_V2 is not set
-# CONFIG_DVB_USB is not set
-# CONFIG_SMS_USB_DRV is not set
-# CONFIG_DVB_TTUSB_BUDGET is not set
-# CONFIG_DVB_TTUSB_DEC is not set
 
 #
 # Webcam, TV (analog/digital) USB devices
 #
 # CONFIG_VIDEO_EM28XX is not set
-
-#
-# Software defined radio USB devices
-#
-# CONFIG_USB_AIRSPY is not set
-# CONFIG_USB_HACKRF is not set
-# CONFIG_USB_MSI2500 is not set
 # CONFIG_MEDIA_PCI_SUPPORT is not set
 CONFIG_MEDIA_PLATFORM_DRIVERS=y
 CONFIG_V4L_PLATFORM_DRIVERS=y
-CONFIG_SDR_PLATFORM_DRIVERS=y
-# CONFIG_DVB_PLATFORM_DRIVERS is not set
 CONFIG_V4L_MEM2MEM_DRIVERS=y
 # CONFIG_VIDEO_MEM2MEM_DEINTERLACE is not set
 # CONFIG_VIDEO_MUX is not set
@@ -5795,7 +5748,6 @@ CONFIG_VIDEO_RENESAS_FCP=m
 CONFIG_VIDEO_RENESAS_FDP1=m
 # CONFIG_VIDEO_RENESAS_JPU is not set
 CONFIG_VIDEO_RENESAS_VSP1=m
-CONFIG_VIDEO_RCAR_DRIF=m
 
 #
 # Rockchip media platform drivers
@@ -5857,24 +5809,18 @@ CONFIG_VIDEO_HANTRO_STM32MP25=y
 # Xilinx media platform drivers
 #
 # CONFIG_VIDEO_XILINX is not set
-
-#
-# MMC/SDIO DVB adapters
-#
-# CONFIG_SMS_SDIO_DRV is not set
-CONFIG_UVC_COMMON=m
-CONFIG_VIDEOBUF2_CORE=m
-CONFIG_VIDEOBUF2_V4L2=m
-CONFIG_VIDEOBUF2_MEMOPS=m
+CONFIG_UVC_COMMON=y
+CONFIG_VIDEOBUF2_CORE=y
+CONFIG_VIDEOBUF2_V4L2=y
+CONFIG_VIDEOBUF2_MEMOPS=y
 CONFIG_VIDEOBUF2_DMA_CONTIG=m
-CONFIG_VIDEOBUF2_VMALLOC=m
+CONFIG_VIDEOBUF2_VMALLOC=y
 CONFIG_VIDEOBUF2_DMA_SG=m
 # end of Media drivers
 
 #
 # Media ancillary drivers
 #
-CONFIG_MEDIA_ATTACH=y
 
 #
 # IR I2C driver auto-selected by 'Autoselect ancillary drivers'
@@ -6079,7 +6025,6 @@ CONFIG_VIDEO_CAMERA_LENS=y
 #
 # SDR tuner chips
 #
-# CONFIG_SDR_MAX2175 is not set
 # end of SDR tuner chips
 
 #
@@ -6104,215 +6049,8 @@ CONFIG_VIDEO_CAMERA_LENS=y
 #
 # Media SPI Adapters
 #
-# CONFIG_CXD2880_SPI_DRV is not set
 # CONFIG_VIDEO_GS1662 is not set
 # end of Media SPI Adapters
-
-CONFIG_MEDIA_TUNER=m
-
-#
-# Customize TV tuners
-#
-# CONFIG_MEDIA_TUNER_E4000 is not set
-# CONFIG_MEDIA_TUNER_FC0011 is not set
-# CONFIG_MEDIA_TUNER_FC0012 is not set
-# CONFIG_MEDIA_TUNER_FC0013 is not set
-# CONFIG_MEDIA_TUNER_FC2580 is not set
-# CONFIG_MEDIA_TUNER_IT913X is not set
-# CONFIG_MEDIA_TUNER_M88RS6000T is not set
-# CONFIG_MEDIA_TUNER_MAX2165 is not set
-CONFIG_MEDIA_TUNER_MC44S803=m
-# CONFIG_MEDIA_TUNER_MSI001 is not set
-# CONFIG_MEDIA_TUNER_MT2060 is not set
-# CONFIG_MEDIA_TUNER_MT2063 is not set
-CONFIG_MEDIA_TUNER_MT20XX=m
-# CONFIG_MEDIA_TUNER_MT2131 is not set
-# CONFIG_MEDIA_TUNER_MT2266 is not set
-# CONFIG_MEDIA_TUNER_MXL301RF is not set
-# CONFIG_MEDIA_TUNER_MXL5005S is not set
-# CONFIG_MEDIA_TUNER_MXL5007T is not set
-# CONFIG_MEDIA_TUNER_QM1D1B0004 is not set
-# CONFIG_MEDIA_TUNER_QM1D1C0042 is not set
-# CONFIG_MEDIA_TUNER_QT1010 is not set
-# CONFIG_MEDIA_TUNER_R820T is not set
-# CONFIG_MEDIA_TUNER_SI2157 is not set
-CONFIG_MEDIA_TUNER_SIMPLE=m
-# CONFIG_MEDIA_TUNER_TDA18212 is not set
-# CONFIG_MEDIA_TUNER_TDA18218 is not set
-# CONFIG_MEDIA_TUNER_TDA18250 is not set
-CONFIG_MEDIA_TUNER_TDA18271=m
-CONFIG_MEDIA_TUNER_TDA827X=m
-CONFIG_MEDIA_TUNER_TDA8290=m
-CONFIG_MEDIA_TUNER_TDA9887=m
-# CONFIG_MEDIA_TUNER_TEA5761 is not set
-# CONFIG_MEDIA_TUNER_TEA5767 is not set
-# CONFIG_MEDIA_TUNER_TUA9001 is not set
-CONFIG_MEDIA_TUNER_XC2028=m
-CONFIG_MEDIA_TUNER_XC4000=m
-CONFIG_MEDIA_TUNER_XC5000=m
-# end of Customize TV tuners
-
-#
-# Customise DVB Frontends
-#
-
-#
-# Multistandard (satellite) frontends
-#
-# CONFIG_DVB_M88DS3103 is not set
-# CONFIG_DVB_MXL5XX is not set
-# CONFIG_DVB_STB0899 is not set
-# CONFIG_DVB_STB6100 is not set
-# CONFIG_DVB_STV090x is not set
-# CONFIG_DVB_STV0910 is not set
-# CONFIG_DVB_STV6110x is not set
-# CONFIG_DVB_STV6111 is not set
-
-#
-# Multistandard (cable + terrestrial) frontends
-#
-# CONFIG_DVB_DRXK is not set
-# CONFIG_DVB_MN88472 is not set
-# CONFIG_DVB_MN88473 is not set
-# CONFIG_DVB_SI2165 is not set
-# CONFIG_DVB_TDA18271C2DD is not set
-
-#
-# DVB-S (satellite) frontends
-#
-# CONFIG_DVB_CX24110 is not set
-# CONFIG_DVB_CX24116 is not set
-# CONFIG_DVB_CX24117 is not set
-# CONFIG_DVB_CX24120 is not set
-# CONFIG_DVB_CX24123 is not set
-# CONFIG_DVB_DS3000 is not set
-# CONFIG_DVB_MB86A16 is not set
-# CONFIG_DVB_MT312 is not set
-# CONFIG_DVB_S5H1420 is not set
-# CONFIG_DVB_SI21XX is not set
-# CONFIG_DVB_STB6000 is not set
-# CONFIG_DVB_STV0288 is not set
-# CONFIG_DVB_STV0299 is not set
-# CONFIG_DVB_STV0900 is not set
-# CONFIG_DVB_STV6110 is not set
-# CONFIG_DVB_TDA10071 is not set
-# CONFIG_DVB_TDA10086 is not set
-# CONFIG_DVB_TDA8083 is not set
-# CONFIG_DVB_TDA8261 is not set
-# CONFIG_DVB_TDA826X is not set
-# CONFIG_DVB_TS2020 is not set
-# CONFIG_DVB_TUA6100 is not set
-# CONFIG_DVB_TUNER_CX24113 is not set
-# CONFIG_DVB_TUNER_ITD1000 is not set
-# CONFIG_DVB_VES1X93 is not set
-# CONFIG_DVB_ZL10036 is not set
-# CONFIG_DVB_ZL10039 is not set
-
-#
-# DVB-T (terrestrial) frontends
-#
-# CONFIG_DVB_AF9013 is not set
-# CONFIG_DVB_CX22700 is not set
-# CONFIG_DVB_CX22702 is not set
-# CONFIG_DVB_CXD2820R is not set
-# CONFIG_DVB_CXD2841ER is not set
-# CONFIG_DVB_DIB3000MB is not set
-# CONFIG_DVB_DIB3000MC is not set
-# CONFIG_DVB_DIB7000M is not set
-# CONFIG_DVB_DIB7000P is not set
-# CONFIG_DVB_DIB9000 is not set
-# CONFIG_DVB_DRXD is not set
-# CONFIG_DVB_EC100 is not set
-# CONFIG_DVB_L64781 is not set
-# CONFIG_DVB_MT352 is not set
-# CONFIG_DVB_NXT6000 is not set
-# CONFIG_DVB_RTL2830 is not set
-# CONFIG_DVB_RTL2832 is not set
-# CONFIG_DVB_RTL2832_SDR is not set
-# CONFIG_DVB_S5H1432 is not set
-# CONFIG_DVB_SI2168 is not set
-# CONFIG_DVB_SP887X is not set
-# CONFIG_DVB_STV0367 is not set
-# CONFIG_DVB_TDA10048 is not set
-# CONFIG_DVB_TDA1004X is not set
-# CONFIG_DVB_ZD1301_DEMOD is not set
-# CONFIG_DVB_ZL10353 is not set
-# CONFIG_DVB_CXD2880 is not set
-
-#
-# DVB-C (cable) frontends
-#
-# CONFIG_DVB_STV0297 is not set
-# CONFIG_DVB_TDA10021 is not set
-# CONFIG_DVB_TDA10023 is not set
-# CONFIG_DVB_VES1820 is not set
-
-#
-# ATSC (North American/Korean Terrestrial/Cable DTV) frontends
-#
-# CONFIG_DVB_AU8522_DTV is not set
-# CONFIG_DVB_AU8522_V4L is not set
-# CONFIG_DVB_BCM3510 is not set
-# CONFIG_DVB_LG2160 is not set
-# CONFIG_DVB_LGDT3305 is not set
-# CONFIG_DVB_LGDT3306A is not set
-# CONFIG_DVB_LGDT330X is not set
-# CONFIG_DVB_MXL692 is not set
-# CONFIG_DVB_NXT200X is not set
-# CONFIG_DVB_OR51132 is not set
-# CONFIG_DVB_OR51211 is not set
-# CONFIG_DVB_S5H1409 is not set
-# CONFIG_DVB_S5H1411 is not set
-
-#
-# ISDB-T (terrestrial) frontends
-#
-# CONFIG_DVB_DIB8000 is not set
-# CONFIG_DVB_MB86A20S is not set
-# CONFIG_DVB_S921 is not set
-
-#
-# ISDB-S (satellite) & ISDB-T (terrestrial) frontends
-#
-# CONFIG_DVB_MN88443X is not set
-# CONFIG_DVB_TC90522 is not set
-
-#
-# Digital terrestrial only tuners/PLL
-#
-# CONFIG_DVB_PLL is not set
-# CONFIG_DVB_TUNER_DIB0070 is not set
-# CONFIG_DVB_TUNER_DIB0090 is not set
-
-#
-# SEC control devices for DVB-S
-#
-# CONFIG_DVB_A8293 is not set
-# CONFIG_DVB_AF9033 is not set
-# CONFIG_DVB_ASCOT2E is not set
-# CONFIG_DVB_ATBM8830 is not set
-# CONFIG_DVB_HELENE is not set
-# CONFIG_DVB_HORUS3A is not set
-# CONFIG_DVB_ISL6405 is not set
-# CONFIG_DVB_ISL6421 is not set
-# CONFIG_DVB_ISL6423 is not set
-# CONFIG_DVB_IX2505V is not set
-# CONFIG_DVB_LGS8GL5 is not set
-# CONFIG_DVB_LGS8GXX is not set
-# CONFIG_DVB_LNBH25 is not set
-# CONFIG_DVB_LNBH29 is not set
-# CONFIG_DVB_LNBP21 is not set
-# CONFIG_DVB_LNBP22 is not set
-# CONFIG_DVB_M88RS2000 is not set
-# CONFIG_DVB_TDA665x is not set
-# CONFIG_DVB_DRX39XYJ is not set
-
-#
-# Common Interface (EN50221) controller drivers
-#
-# CONFIG_DVB_CXD2099 is not set
-# CONFIG_DVB_SP2 is not set
-# end of Customise DVB Frontends
 # end of Media ancillary drivers
 
 #
@@ -8849,7 +8587,6 @@ CONFIG_ASHMEM=y
 # CONFIG_FB_SM750 is not set
 # CONFIG_MFD_NVEC is not set
 CONFIG_STAGING_MEDIA=y
-# CONFIG_DVB_AV7110 is not set
 CONFIG_VIDEO_MAX96712=m
 CONFIG_VIDEO_MESON_VDEC=m
 
