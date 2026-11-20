@@ -163,7 +163,8 @@ CONFIG_GENERIC_SCHED_CLOCK=y
 #
 # Scheduler features
 #
-# CONFIG_UCLAMP_TASK is not set
+CONFIG_UCLAMP_TASK=y
+CONFIG_UCLAMP_BUCKETS_COUNT=5
 # CONFIG_SCHED_PROXY_EXEC is not set
 # end of Scheduler features
 
@@ -190,6 +191,7 @@ CONFIG_FAIR_GROUP_SCHED=y
 # CONFIG_CFS_BANDWIDTH is not set
 # CONFIG_RT_GROUP_SCHED is not set
 CONFIG_SCHED_MM_CID=y
+CONFIG_UCLAMP_TASK_GROUP=y
 CONFIG_CGROUP_PIDS=y
 # CONFIG_CGROUP_RDMA is not set
 # CONFIG_CGROUP_DMEM is not set
@@ -2021,7 +2023,7 @@ CONFIG_FW_LOADER=y
 CONFIG_FW_LOADER_PAGED_BUF=y
 CONFIG_FW_LOADER_SYSFS=y
 CONFIG_EXTRA_FIRMWARE="arm/mali/arch10.8/mali_csffw.bin rtl_nic/rtl8125b-2.fw rtl_bt/rtl8852bu_fw.bin rtl_bt/rtl8852btu_fw.bin rtw89/rtw8852b_fw-1.bin regulatory.db regulatory.db.p7s"
-CONFIG_EXTRA_FIRMWARE_DIR="/mnt/build/rock5/android_device_radxa_rock5/out/firmware"
+CONFIG_EXTRA_FIRMWARE_DIR="/mnt/build/android-15-rock5/out/rock5-prebuilts/firmware"
 CONFIG_FW_LOADER_USER_HELPER=y
 # CONFIG_FW_LOADER_USER_HELPER_FALLBACK is not set
 # CONFIG_FW_LOADER_COMPRESS is not set
@@ -4967,7 +4969,7 @@ CONFIG_SENSORS_LM90=m
 # CONFIG_SENSORS_PCF8591 is not set
 # CONFIG_PMBUS is not set
 # CONFIG_SENSORS_PT5161L is not set
-CONFIG_SENSORS_PWM_FAN=m
+CONFIG_SENSORS_PWM_FAN=y
 CONFIG_SENSORS_RASPBERRYPI_HWMON=m
 # CONFIG_SENSORS_SA67MCU is not set
 CONFIG_SENSORS_SL28CPLD=m
